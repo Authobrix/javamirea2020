@@ -13,7 +13,7 @@ public class Main {
         System.out.println(sum);
         sum = 0;
         int w = 0;
-        while (w != array.length) {
+        while (w != array.length){
             sum = sum + array[w];
             w++;
         }
