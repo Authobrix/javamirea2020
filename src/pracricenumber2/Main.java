@@ -9,6 +9,7 @@ public class Main {
         shape.sidesCount = 5;
         System.out.println(shape.getColor());
         System.out.println(shape.sidesCount);
+
     }
 }
 
