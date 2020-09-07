@@ -1,4 +1,6 @@
-package ex2;
+package practicheskayanumber1;
+
+import java.util.Arrays;
 
 public class Main {
 
@@ -22,10 +24,7 @@ public class Main {
         do {
             sum = sum + array[d];
             d++;
-        }
-
-
-        while (d != array.length);
+        }while (d != array.length);
         System.out.println(sum);
 
 
@@ -39,16 +38,31 @@ public class Main {
             sum1 = sum1 + (1.0 / i);
         }
             System.out.println(sum1);
-        int [] arr;
-        array = new int[5];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int)(Math.random()*47);
-            System.out.println(array[i]);
+
+
+        int arr[] = new int[10];
+        for(int i = 0; i <  arr.length; i++) {
+            arr[i] =  (int)(Math.random() * 100);
+            System.out.print(arr[i] + "  ");
+        }
+        System.out.print("\nSorted: \n");
+
+        Arrays.sort(arr);
+
+        for(int i = 0; i <  arr.length; i++) {
+            System.out.print(arr[i] + "  ");
+        }
+
+        int factorial=1;
+        for (int i = 1; i <5; i++) {
+            factorial = factorial * i;
+        }
+        System.out.println(factorial);
 
         }
 
     }
-}
+
 
 
 
