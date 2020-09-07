@@ -11,6 +11,6 @@ public class Main {
     }
 
     public static void main(String[] args){
-        System.out.println(calculateFactorial(3));
+        System.out.println(calculateFactorial(4));
     }
 }
