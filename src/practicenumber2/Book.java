@@ -1,7 +1,10 @@
 package practicenumber2;
 
-public abstract class Book {
+public class Book {
     private String name;
-    private double size;
-    private int year;
+    public double size;
+    public Book(String name, double size){
+        this.name=name;
+        this.size=size;
+    }
 }
