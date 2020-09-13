@@ -1,4 +1,4 @@
-package pracricenumber2;
+package practicenumber2;
 
 public class Ball {
     private String material;

@@ -1,4 +1,4 @@
-package pracricenumber2;
+package practicenumber2;
 
 public abstract class Book {
     private String name;

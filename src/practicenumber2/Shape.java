@@ -1,4 +1,4 @@
-package pracricenumber2;
+package practicenumber2;
 
 public class Shape {
     private String color;

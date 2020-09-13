@@ -33,11 +33,9 @@ public class Main {
         }
 
 // Первые 10 чисел гармонического ряда
-        double sum1 = 0.0;
-        for (int i = 1; i < 10; i++) {
-            sum1 = sum1 + (1.0 / i);
-        }
-        System.out.println(sum1);
+        System.out.println("Первые 10 чисел гармонического ряда: ");
+        for (double n = 1.0; n < 11.0; n++)
+            System.out.println(String.format("%.3f", 1.0/n));
 
 // Массив рандомных чисел с сортировкой (другой метод в отдельном package)
         int arr[] = new int[10];
