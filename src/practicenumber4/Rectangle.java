@@ -5,8 +5,8 @@ public abstract class Rectangle extends Shape{
     protected double length;
 
     public Rectangle() {
-
     }
+
     public Rectangle(double width, double length) {
         this.width = width;
         this.length = length;

@@ -1,11 +1,12 @@
 package practicenumber4;
 
     public abstract class Circle extends Shape{
+
         protected double radius;
 
         public Circle() {
-
         }
+
         public Circle(double radius) {
             this.radius = radius;
         }
