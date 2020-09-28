@@ -1,6 +1,6 @@
 package practice5;
 
-public class MovableCircle implements Movable {
+public abstract class MovableCircle implements Movable {
 
     private int radius;
     private MovablePoint center;
