@@ -2,7 +2,8 @@ package practice7;
 
 public class Plate extends Dish {
     String name;
-    int calories;
+    int costs;
+    int price;
     @Override
     public void wash() {
     }
@@ -10,8 +11,24 @@ public class Plate extends Dish {
     @Override
     public void clean() {
     }
-    public void Meal(String name, int calories){
+    public Plate(String name, int costs){
         this.name = name;
-        this.calories= calories;
+        this.costs= costs;
+    }
+
+    public int getcosts() {
+        return costs;
+    }
+
+    public void setcosts(int costs) {
+        this.costs = costs;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
