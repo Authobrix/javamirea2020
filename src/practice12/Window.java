@@ -17,11 +17,10 @@ public class Window extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(null);
 
-        //JTextField textField1 = new JTextField("Выберите планету", 15);
-        //panel.add(textField1);
+
         JLabel label1 = new JLabel("Choose the planet");
         label1.setBounds(0,0,150,30);
-        label1.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        label1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
         panel.add(label1);
 
         JComboBox comboBox = new JComboBox();
@@ -35,12 +34,12 @@ public class Window extends JFrame {
         comboBox.addItem("Uranus");
         comboBox.addItem("Neptune");
         comboBox.setBounds(0,40,120,30);
-        comboBox.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        comboBox.setFont(new Font("Times New Roman", Font.PLAIN, 14));
         panel.add(comboBox);
 
         JLabel label2 = new JLabel("3,72 m/s^2");
         label2.setBounds(0,80,150,30);
-        label2.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        label2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
         panel.add(label2);
 
         comboBox.addActionListener(new ActionListener() {

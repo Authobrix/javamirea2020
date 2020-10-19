@@ -1,97 +1,77 @@
 package Practice11;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-import javax.swing.*;
 
 public class Game extends JFrame {
-
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextArea textArea;
-    public int num;
-    public int count = 0;
-
+    public int number;
+    public int repeat=0;
+    public int result=0;
     public Game() {
-        super("Game");
-        createGUI();
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-
-    public void createGUI() {
-        Random rand = new Random();
-        num = rand.nextInt(20);
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
-
-        textArea = new JTextArea("Добро пожаловать в игру <Угадай число>. " +
-                " Вам необходимо угадать число от 0 до 20", 2, 23);
-        textArea.setLineWrap(true);
-        panel.add(textArea);
-
-        JButton button1 = new JButton("Ввод");
-        JButton button2 = new JButton("Выход");
-        panel.add(button1);
-
-        textField1 = new JTextField(2);
-        panel.add(textField1);
-
-        textField2 = new JTextField(25);
-        panel.add(textField2);
-
-        panel.add(button2);
-
-        button1.addActionListener(new ActionListener() {
+        super();
+        Random rnd = new Random();
+        number = rnd.nextInt(20);
+        JFrame frame = new JFrame("Угадай число");
+        JButton button = new JButton("Проверить значение");
+        button.setBackground(Color.BLUE);
+        JButton button_exit = new JButton("Выйти");
+        JTextField chislo = new JTextField("Текст", 25);
+        chislo.setFont(new Font("Dialog", Font.PLAIN, 20));
+        chislo.setHorizontalAlignment(JTextField.CENTER);
+        chislo.setBackground(Color.WHITE);
+        chislo.setBounds(30, 100, 320, 40);
+        button.setBounds(30,160,320,40);
+        button_exit.setBounds(30,260,320,40);
+        button_exit.setVisible(false);
+        frame.add(button);
+        frame.add(chislo);
+        frame.add(button_exit);
+        JTextField text2 = new JTextField("Результат угадывания", 20);
+        frame.add(text2);
+        text2.setFont(new Font("Dialog", Font.PLAIN, 20));
+        text2.setHorizontalAlignment(JTextField.CENTER);
+        text2.setBackground(Color.RED);
+        text2.setBounds(20, 230, 320, 30);
+        frame.setSize(400,400);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        ActionListener actionListener = new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
-                if (count == 4) dispose();
-                int a = Integer.parseInt(textField1.getText());
-                if (a == num) {
-                    textField2.setText("Вы угадали!");
-                    count = 4;
+                int input = Integer.parseInt(chislo.getText());
+                if (input>number) {
+                    text2.setText("Число больше необходимого");
                 }
-                else if (a < num) {
-                    count++;
-                    if (count == 3) {
-                        textField2.setText("Вы проиграли! Ваши попытки закончились");
-                        count++;
-                    }
-                    else textField2.setText("Вы ошиблись. Загаданное число больше");
+                else if (input<number) {
+                    text2.setText("Число меньше необходимого");
                 }
-                else if (a > num) {
-                    count++;
-                    if (count == 3) {
-                        textField2.setText("Вы проиграли! Ваши попытки закончились");
-                        count++;
-                    }
-                    else textField2.setText("Вы ошиблись. Загаданное число меньше");
+                else if (input==number){
+                    text2.setText("Вы победили");
+                    result=1;
+                    button_exit.setVisible(true);
+                    button.setVisible(false);
+                }
+                repeat++;
+                if ((repeat==3)&&(result!=1)) {
+                    text2.setText("Вы проиграли");
+                    button_exit.setVisible(true);
+                    button.setVisible(false);
                 }
             }
-        });
-        button2.addActionListener(new ActionListener() {
+        };
+        ActionListener actionListener2 = new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                // dispose();
+                System.exit(0);
             }
-        });
-
-        getContentPane().add(panel);
-        setPreferredSize(new Dimension(320, 170));
+        };
+        button.addActionListener(actionListener);
+        button_exit.addActionListener(actionListener2);
     }
 
-    public class TestActionListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {}
-    }
-
-    public static void main(String[] args) {
-        new TextChange();
-    }
 }
-
-
