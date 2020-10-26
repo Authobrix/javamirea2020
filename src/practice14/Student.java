@@ -92,9 +92,9 @@ public class Student implements  Test{
     public static void main(String[] args) {
         Test[] test = new Student[5];
         test[0] = new Student(1, 3.45);
-        test[1] = new Student(2, 3.5);
-        test[2] = new Student(3, 4.5);
-        test[3] = new Student(4, 4.55);
+        test[1] = new Student(2, 3.61);
+        test[2] = new Student(3, 4.89);
+        test[3] = new Student(4, 4.35);
         test[4] = new Student(5, 5);
 
         binfind(test, 1, 5, 5);
