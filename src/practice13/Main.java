@@ -15,6 +15,7 @@ public class Main {
         students.add(new Student(3.82));
         students.add(new Student(4.24));
 
+        System.out.println();
         Collections.sort(students, new SortingStudentsByGPA());
         for (Student s : students) {
             if (i == 0) System.out.println("Первый список");
@@ -30,7 +31,7 @@ public class Main {
         students1.add(new Student(2.27));
         students1.add(new Student(3.48));
         students1.add(new Student(4.86));
-        students1.add(new Student(3.20));
+        students1.add(new Student(3.2));
 
         i=0;
         Collections.sort(students1, new SortingStudentsByGPA());

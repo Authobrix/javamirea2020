@@ -37,14 +37,12 @@ public class Student implements  Test{
     public static void binfind(Test[] test, int first, int last, double item) {
         long start = System.currentTimeMillis();
         int position;
-        int comparisonCount = 1;    // подсчитывает количество сравнений
-
-        // находим индекс среднего элемента массива
+        int comparisonCount = 1;
         position = (first + last) / 2;
 
         while ((test[position].getAverage()!=item) && (first <= last)) {
             comparisonCount++;
-            if (test[position].getAverage()>item) {  // если число заданного для поиска
+            if (test[position].getAverage()>item) {
                 last = position - 1;
             } else {
                 first = position + 1;
