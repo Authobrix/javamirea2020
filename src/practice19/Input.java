@@ -17,9 +17,6 @@ public class Input {
                 if ((i == 0) && (symb[i]=='0')){
                     throw (new Exception());
                 }
-                if ((symb[i]<'0') && (symb[i]>'9')){
-                    throw (new Exception());
-                }
             }
             System.out.println("Верный ввод");
         } catch (Exception exe) {

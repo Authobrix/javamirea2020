@@ -13,7 +13,7 @@ public class Exception2 {
                 System.out.println(2.0/i);
             }
             else {
-                System.out.println("Бесконечность");
+                System.out.println("Бесконечность, на 0 делить нельзя");
             }
         } catch (Exception ex) {
             ex.getMessage();
