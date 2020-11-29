@@ -7,17 +7,17 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<>();
-        map.put("Christopher","Nolan");
-        map.put("Quentin","Tarantino");
-        map.put("Ridley","Scott");
-        map.put("Steven","Spielberg");
-        map.put("Martin","Mcdonagh");
-        map.put("Wes","Anderson");
-        map.put("Matt","Reeves");
-        map.put("Martin","Scorsese");
-        map.put("Zack","Snyder");
-        map.put("David","Fincher");
-        map.put("David", "Lynch");
+        map.put("Nolan", "Christopher");
+        map.put("Tarantino","Quentin");
+        map.put("Scott","Ridley");
+        map.put("Spielberg","Steven");
+        map.put("Mcdonagh","Martin");
+        map.put("Anderson","Wes");
+        map.put("Reeves","Matt");
+        map.put("Scorsese", "Martin");
+        map.put("Snyder","Zack");
+        map.put("Fincher","David");
+        map.put("Lynch","David");
 
         Map<String, String> NewMap = new HashMap<>();
         for (Iterator<String> iterator = map.keySet().iterator(); iterator.hasNext(); ) {
