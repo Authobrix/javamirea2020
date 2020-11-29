@@ -1,45 +1,51 @@
 package practice24.part5;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+//D:\Downloads\\file.txt
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader((System.in)));
-        String fileName = bufferedReader.readLine();
-        //String fileName = "D:\\test.txt";
-        Stream<String> lines = Files.lines(Paths.get(fileName), StandardCharsets.UTF_8);
-        String data = lines.collect(Collectors.joining(" "));
-        String[] s = data.split(" ");
-        StringBuilder result = getLine(s);
+    public static void main(String[] args)  throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String fileName = reader.readLine();
+        reader.close();
+        reader = new BufferedReader(new FileReader(fileName));
+
+        StringBuilder result = getLine(reader.readLine().split(" "));
         System.out.println(result.toString());
+        reader.close();
     }
+
     public static StringBuilder getLine(String... words) {
         StringBuilder sb = new StringBuilder();
-        String[] w;
-        if(words==null||words.length==0)return sb;
-        else w = words;
-        sb.append(w[0]);
-        for (int j = 0; j < w.length; j++) {
-            for (int i = 1; i < w.length; i++) {
-                if(w[i].length()==0)continue;
-                if(sb.toString().toLowerCase().charAt(0) == w[i].toLowerCase().charAt(w[i].length()-1)){
-                    sb.insert(0, w[i] + " ");
-                    w[i] = "";
-                }
-                else if(sb.toString().toLowerCase().charAt(sb.length()-1) == w[i].toLowerCase().charAt(0)){
-                    sb.append(" " + w[i]);
-                    w[i] = "";
-                }
-            }
-
+        if (words.length==0) return sb;
+        for (String s : words) {
+            if (found(s, new ArrayList<String>(Arrays.asList(words)), sb)) break;
         }
         return sb;
+    }
+
+    public static boolean found(String current, ArrayList<String> possibilities, StringBuilder result) {
+        ArrayList<String> nextPossibilities = new ArrayList<>(possibilities);
+        if (nextPossibilities.size()== 1) {
+            result.append(current);
+            return true;
+        }
+        nextPossibilities.remove(current);
+
+        for (String next: nextPossibilities) {
+            if (next.toLowerCase().substring(0,1).equals(current.toLowerCase().substring(current.length()-1))) {
+                if  (found(next,nextPossibilities,result)) {
+                    result =result.insert(0,current + " ");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
