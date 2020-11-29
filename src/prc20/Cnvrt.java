@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class cnvrt<E> {
+public class Cnvrt<E> {
     private List<E> list = new ArrayList<>();
-    public cnvrt(E[] arr) {
+    public Cnvrt(E[] arr) {
         list.addAll(Arrays.asList(arr));
     }
     public void showList() {
