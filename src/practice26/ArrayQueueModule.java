@@ -1,10 +1,9 @@
 package practice26;
 
 public class ArrayQueueModule {
-
     private static int size = 0;
     private static int head = 0;
-    private static Object[] elements = new Object[5];
+    private static Object[] elements = new Object[10];
 
     public static void enqueue(Object element) {
         assert element != null;

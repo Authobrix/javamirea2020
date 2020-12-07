@@ -3,7 +3,7 @@ package practice26;
 public class ArrayQueue {
     private int size = 0;
     private int head = 0;
-    private Object[] elements = new Object[5];
+    private Object[] elements = new Object[10];
 
     public void enqueue(Object element) {
         assert element != null;
@@ -56,7 +56,7 @@ public class ArrayQueue {
     }
 
     public void clear() {
-        Object[] newElements = new Object[5];
+        Object[] newElements = new Object[10];
         elements = newElements;
         size = 0;
         head = 0;
