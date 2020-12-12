@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NumbersTest {
 
     @org. junit.Test
-    public void sum()  throws Exception {
+    public void sum()   {
         Numbers numbers = new Numbers();
         int actual =numbers.sum(5);
         int expected =15;
